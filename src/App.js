@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import TopBar from './components/TopBar';
+import { courseDetailsArray as CardArray, filterCategoryArray as CategoryArray } from './commonData';
+import Card from './components/Card';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css'
+import Filter from './components/Filter';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {}
+  }
+
+  render() {
+    return (<div style={{ margin: "0", backgroundColor: "#F2F6FF" }
+    }>
+      <TopBar />
+      <div className="container filter">{CategoryArray.map((filter, index) => <Filter filter={filter} index={index} />)}</div>
+      <div className="container">
+        {CardArray.map((item) => <Card item={item} key={item.id} />)}
+      </div>
+    </div >);
+  }
 }
 
 export default App;
