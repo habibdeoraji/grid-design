@@ -53,3 +53,21 @@
 .filter {
   border: none;
 }
+
+
+
+.filterStyle {
+  border: 1px solid #0084ff;
+  background: transparent;
+  margin: 5px;
+  font-size: .75em;
+  padding: 6px 14px;
+  border-radius: 15px;
+  color: #0084ff
+}
+
+
+.active {
+  background-color: #0084ff;
+  color: white
+}
